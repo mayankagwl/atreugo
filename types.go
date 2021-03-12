@@ -316,6 +316,9 @@ type Config struct { // nolint:maligned
 	// and calls the handler sooner when given body is
 	// larger then the current limit.
 	StreamRequestBody bool
+
+	// BeforeHandler Function to modify ctx before starting path handling.
+	BeforeHandler func(ctx *fasthttp.RequestCtx)
 }
 
 // StaticFS represents settings for serving static files
